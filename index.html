@@ -240,13 +240,9 @@ label.f textarea{min-height:70px;resize:vertical}
 @media(max-width:700px){.thumb{width:76px;height:76px}.hero-photo{height:auto;max-height:42vh}}
 
 .beverage-photo{object-fit:contain;background:#fff;padding:5px}.hero-photo.beverage-photo{max-height:38vh}
-.zadna{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border:1px solid var(--gold-dark);border-radius:14px;background:var(--panel);color:var(--ink);text-decoration:none;transition:border-color .2s}
-[dir=rtl] .zadna{padding:8px 8px 8px 16px}
-.zadna:hover,.zadna:focus-visible{border-color:var(--gold)}
-.zadna-a{width:46px;height:46px;flex:none;border-radius:10px;background:#F08A24;color:#fff;font:700 30px/46px system-ui,sans-serif;text-align:center}
-.zadna-txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.35;text-align:start}
-.zadna-txt b{font-size:14px;font-weight:600;color:var(--gold)}
-.zadna-txt small{font-size:12px;color:var(--muted)}
+.zadna-cert{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;max-width:420px;color:var(--gold);font-size:14px;font-weight:600;text-decoration:none}
+.zadna-cert img{width:100%;height:auto;border-radius:14px;border:1px solid var(--gold-dark);background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+.zadna-cert:hover img,.zadna-cert:focus-visible img{border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -271,7 +267,7 @@ label.f textarea{min-height:70px;resize:vertical}
       <img class="logo" src="images/logo.jpg" alt="Khodmooni – مطعم خودموني">
       <p data-t="tagline">كباب إيراني خاص · الفلاح، أبوظبي · يومياً من 10 صباحاً حتى 11 مساءً</p>
       <div class="services" id="services"></div>
-      <a class="zadna" href="images/zadna-rating-a.jpg" target="_blank" rel="noopener"><span class="zadna-a" aria-hidden="true">A</span><span class="zadna-txt"><b data-t="zadnaTitle">تقييم زادنا A</b><small data-t="zadnaSub">المنشأة بحالة ممتازة · هيئة أبوظبي للزراعة والسلامة الغذائية</small></span></a>
+      <a class="zadna-cert" href="images/zadna-rating-a.jpg" target="_blank" rel="noopener"><img src="images/zadna-rating-a.jpg" width="1400" height="982" loading="lazy" decoding="async" alt="Zadna Rating A – ADAFSA"><span data-t="zadnaTitle">تقييم زادنا A</span></a>
       <div class="cta">
         <a class="btn ribbon" href="#menu" data-t="orderOnline">اطلب الآن</a>
         <a class="btn ghost" href="https://wa.me/971589753770" data-t="chatWa">تواصل عبر واتساب</a>
