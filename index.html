@@ -240,6 +240,13 @@ label.f textarea{min-height:70px;resize:vertical}
 @media(max-width:700px){.thumb{width:76px;height:76px}.hero-photo{height:auto;max-height:42vh}}
 
 .beverage-photo{object-fit:contain;background:#fff;padding:5px}.hero-photo.beverage-photo{max-height:38vh}
+.zadna{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border:1px solid var(--gold-dark);border-radius:14px;background:var(--panel);color:var(--ink);text-decoration:none;transition:border-color .2s}
+[dir=rtl] .zadna{padding:8px 8px 8px 16px}
+.zadna:hover,.zadna:focus-visible{border-color:var(--gold)}
+.zadna-a{width:46px;height:46px;flex:none;border-radius:10px;background:#F08A24;color:#fff;font:700 30px/46px system-ui,sans-serif;text-align:center}
+.zadna-txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.35;text-align:start}
+.zadna-txt b{font-size:14px;font-weight:600;color:var(--gold)}
+.zadna-txt small{font-size:12px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -264,6 +271,7 @@ label.f textarea{min-height:70px;resize:vertical}
       <img class="logo" src="images/logo.jpg" alt="Khodmooni – مطعم خودموني">
       <p data-t="tagline">كباب إيراني خاص · الفلاح، أبوظبي · يومياً من 10 صباحاً حتى 11 مساءً</p>
       <div class="services" id="services"></div>
+      <a class="zadna" href="images/zadna-rating-a.jpg" target="_blank" rel="noopener"><span class="zadna-a" aria-hidden="true">A</span><span class="zadna-txt"><b data-t="zadnaTitle">تقييم زادنا A</b><small data-t="zadnaSub">المنشأة بحالة ممتازة · هيئة أبوظبي للزراعة والسلامة الغذائية</small></span></a>
       <div class="cta">
         <a class="btn ribbon" href="#menu" data-t="orderOnline">اطلب الآن</a>
         <a class="btn ghost" href="https://wa.me/971589753770" data-t="chatWa">تواصل عبر واتساب</a>
@@ -390,7 +398,7 @@ label.f textarea{min-height:70px;resize:vertical}
 var WA = '971589753770';
 
 var T = {
-  ar: { navMenu:'المنيو', navVisit:'العنوان والتواصل', tagline:'كباب إيراني خاص · الفلاح، أبوظبي · يومياً من 10 صباحاً حتى 11 مساءً',
+  ar: { zadnaTitle:'تقييم زادنا A', zadnaSub:'المنشأة بحالة ممتازة · هيئة أبوظبي للزراعة والسلامة الغذائية', navMenu:'المنيو', navVisit:'العنوان والتواصل', tagline:'كباب إيراني خاص · الفلاح، أبوظبي · يومياً من 10 صباحاً حتى 11 مساءً',
     services:['توصيل','سفري','جلسات','خارجي (كيترينغ)'], orderOnline:'اطلب الآن', chatWa:'تواصل عبر واتساب', menuTitle:'أقسام المنيو',
     prices:'الأسعار بالدرهم وشاملة ضريبة القيمة المضافة', vatIncl:'شامل ضريبة القيمة المضافة', service:'جميع الأطباق الرئيسية تقدم مع: 3 أسياخ مع خبز (زبادي خيار + خضار + بطاطس) · 2 سيخ مع أرز (زبادي خيار + خضار)',
     addrK:'العنوان', addr:'شارع الخير، الفلاح 5، أبوظبي<br>دوار الفلاح القديم، بجانب الفرسان لغسيل السيارات', map:'الاتجاهات على خرائط جوجل',
@@ -404,7 +412,7 @@ var T = {
     errName:'يرجى كتابة الاسم.', errAddr:'يرجى كتابة عنوان التوصيل.', errEmpty:'السلة فارغة.', remove:'حذف', aed:'درهم',
     msgHead:'طلب جديد من موقع خودموني', msgTotal:'المجموع', msgType:'نوع الطلب', msgName:'الاسم', msgAddr:'العنوان', msgNotes:'ملاحظات', kg:'كغ',
     waTo:'واتساب المطعم', waMsg:'أرسل رسالة واتساب ←', sidesK:'سلطات وإضافات جانبية', addonsTotal:'مجموع الإضافات', noteK:'ملاحظة لهذا الطبق (اختياري)', notePh:'مثال: بدون بصل', errServe:'يرجى اختيار «مع الأرز» أو «مع الخبز».', noteL:'ملاحظة', invoice:'الفاتورة', itemsK:'عدد الأصناف', subtotal:'مجموع الطلب', deliveryFee:'رسوم التوصيل', feeTbd:'تُحدد عند التأكيد', invoiceTotal:'إجمالي الفاتورة', payK:'طريقة الدفع', cash:'نقداً', card:'بطاقة بنكية' },
-  fa: { navMenu:'منو', navVisit:'آدرس و تماس', tagline:'کباب مخصوص ایرانی · الفلاح، ابوظبی · هر روز ۱۰ صبح تا ۱۱ شب',
+  fa: { zadnaTitle:'رتبه‌ی بهداشتی A زادنا', zadnaSub:'وضعیت عالی · سازمان کشاورزی و ایمنی غذایی ابوظبی', navMenu:'منو', navVisit:'آدرس و تماس', tagline:'کباب مخصوص ایرانی · الفلاح، ابوظبی · هر روز ۱۰ صبح تا ۱۱ شب',
     services:['تحویل در محل','بیرون‌بر','سالن غذاخوری','کترینگ'], orderOnline:'سفارش آنلاین', chatWa:'گفتگو در واتساپ', menuTitle:'بخش‌های منو',
     prices:'قیمت‌ها به درهم و شامل مالیات (VAT)', vatIncl:'شامل مالیات (VAT)', service:'همه غذاهای اصلی با سرویس سرو می‌شوند: ۳ سیخ با نان (ماست و خیار، سبزی، سیب‌زمینی) · ۲ سیخ با برنج (ماست و خیار، سبزی)',
     addrK:'آدرس', addr:'شارع الخیر، الفلاح ۵، ابوظبی<br>میدان قدیم الفلاح، کنار کارواش الفرسان', map:'مسیریابی در گوگل‌مپ',
@@ -418,7 +426,7 @@ var T = {
     errName:'لطفاً نام خود را بنویسید.', errAddr:'لطفاً آدرس تحویل را بنویسید.', errEmpty:'سبد خرید خالی است.', remove:'حذف', aed:'درهم',
     msgHead:'سفارش جدید از سایت خودمونی', msgTotal:'جمع', msgType:'نوع سفارش', msgName:'نام', msgAddr:'آدرس', msgNotes:'توضیحات', kg:'کیلو',
     waTo:'واتساپ رستوران', waMsg:'ارسال پیام در واتساپ ←', sidesK:'سالاد و مخلفات', addonsTotal:'جمع افزودنی‌ها', noteK:'توضیح برای این غذا (اختیاری)', notePh:'مثلاً: بدون پیاز', errServe:'لطفاً «با برنج» یا «با نان» را انتخاب کنید.', noteL:'توضیح', invoice:'فاکتور', itemsK:'تعداد اقلام', subtotal:'جمع سفارش', deliveryFee:'هزینه ارسال', feeTbd:'پس از تأیید', invoiceTotal:'جمع فاکتور', payK:'نوع پرداخت', cash:'نقدی', card:'کارت بانکی' },
-  en: { navMenu:'Menu', navVisit:'Location & Contact', tagline:'Special Persian Kebab · Al Falah, Abu Dhabi · Daily 10 AM – 11 PM',
+  en: { zadnaTitle:'Zadna Rating A', zadnaSub:'Excellent level · Abu Dhabi Agriculture and Food Safety Authority', navMenu:'Menu', navVisit:'Location & Contact', tagline:'Special Persian Kebab · Al Falah, Abu Dhabi · Daily 10 AM – 11 PM',
     services:['Delivery','Takeaway','Dine In','Catering'], orderOnline:'Order Online', chatWa:'Chat on WhatsApp', menuTitle:'Our Menu',
     prices:'Prices in AED, VAT included', vatIncl:'VAT included', service:'All main dishes are served with: 3 sticks with bread (cucumber yogurt + vegetables + fries) · 2 sticks with rice (cucumber yogurt + vegetables)',
     addrK:'Address', addr:'Al Khair St, Al Falah 5, Abu Dhabi<br>Al Falah Old Roundabout, next to Al Fursan Car Wash', map:'Directions on Google Maps',
