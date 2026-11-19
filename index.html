@@ -923,20 +923,21 @@ function setLang(l){
   document.querySelectorAll('[data-t]').forEach(function(el){ var k=el.getAttribute('data-t'); if (d[k]!==undefined) el.innerHTML=d[k]; });
   document.getElementById('services').innerHTML = d.services.map(function(s){ return '<span>'+esc(s)+'</span>'; }).join('<span aria-hidden="true">◆</span>');
   document.querySelectorAll('.langs button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang')===lang?'true':'false'); });
-  try{ localStorage.setItem('khodmooni-lang-v2', lang); }catch(e){}
   renderCats(); renderItems(); updateBadges(); renderReviews();
   if (opt) renderOptions();
   if (document.getElementById('cartSheet').classList.contains('open')) renderCart();
 }
-document.querySelectorAll('.langs button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); }); });
+document.querySelectorAll('.langs button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); try{ localStorage.setItem('khodmooni-lang-v3', lang); }catch(e){} }); });
 
 (function(){
   load();
   try{ var c=JSON.parse(localStorage.getItem('khodmooni-customer')||'null'); if (c){ document.getElementById('cName').value=c.n||''; document.getElementById('cAddr').value=c.a||''; } }catch(e){}
-  var saved=null; try{ saved=localStorage.getItem('khodmooni-lang-v2'); }catch(e){}
+  var saved=null; try{ saved=localStorage.getItem('khodmooni-lang-v3'); }catch(e){}
   var q=(location.search.match(/[?&]lang=(ar|fa|en)/)||[])[1] || (location.hash.match(/^#(ar|fa|en)$/)||[])[1];
-  var nav=(navigator.language||'').slice(0,2).toLowerCase();
-  setLang(q || saved || (nav==='fa'?'fa':nav==='en'?'en':'ar'));
+  // Device language: Persian -> fa, Arabic -> ar, anything else -> English
+  var navs=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']), dev='en';
+  for (var k=0;k<navs.length;k++){ var c2=String(navs[k]||'').slice(0,2).toLowerCase(); if (c2==='fa'||c2==='ar'||c2==='en'){ dev=c2; break; } }
+  setLang(q || saved || dev);
 })();
 </script>
 </body>
